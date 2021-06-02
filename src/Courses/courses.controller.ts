@@ -1,4 +1,4 @@
-import { UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import {
     Controller,
     Post,
@@ -21,14 +21,14 @@ import { FileInterceptor } from '@nestjs/platform-express';
       @Body('description') courseDesc: string,
       @Body('date') courseDate: string,
       @Body('time') courseTime: string,
-     // @Body('course_image') courseCourse_image: Blob,
+     
     ) {
       const generatedId = await this.CoursesService.insertCourses(
         courseTitle,
         courseDesc,
         courseDate,
         courseTime,
-      //  courseCourse_image,
+      
       );
       return { id: generatedId };
     }
@@ -38,6 +38,12 @@ import { FileInterceptor } from '@nestjs/platform-express';
       console.log(file);
     }
   
+    @Get(':upload')
+    setUploadedFile(@Param('upload')image,
+    @Res() res){
+      return res.sendFile(image, {root:'uploads'});
+    }
+    
     @Get()
     getAllCourses() {
       return this.CoursesService.getCourses();
