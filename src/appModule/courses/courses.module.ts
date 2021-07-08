@@ -16,4 +16,4 @@ import { CoursesSchema } from './courses.model';
   controllers: [CoursesController],
   providers: [CoursesService],
 })
-export class AddCoursesModule {}
+export class CoursesModule {}

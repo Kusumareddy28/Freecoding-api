@@ -45,14 +45,6 @@ import { FileInterceptor } from '@nestjs/platform-express';
       return res.sendFile(imgPath, {root:'uploads'});
     }
     
-    @Get()
-    getAllCourses() {
-      return this.CoursesService.getCourses();
-    }
-  
-    @Get(':id')
-    getCourses(@Param('id') courseId: string) {
-      return this.CoursesService.getSingleCourses(courseId);
-    }
+   
  
   }
