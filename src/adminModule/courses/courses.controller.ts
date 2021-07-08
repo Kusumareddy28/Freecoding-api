@@ -39,9 +39,10 @@ import { FileInterceptor } from '@nestjs/platform-express';
     }
   
     @Get(':upload')
-    setUploadedFile(@Param('upload')image,
+    setUploadedFile(@Param('upload') image,
     @Res() res){
-      return res.sendFile(image, {root:'uploads'});
+      const imgPath =UploadedFile(image);
+      return res.sendFile(imgPath, {root:'uploads'});
     }
     
     @Get()
