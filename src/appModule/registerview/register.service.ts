@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 
 import { Register } from './register.model';
 
+
 @Injectable()
 export class RegisterService {
   constructor(
@@ -59,5 +60,6 @@ export class RegisterService {
     }
     return register_data;
   }
+
   
 }

@@ -5,12 +5,22 @@ import { RegisterController } from './register.controller';
 import { RegisterService } from './register.service';
 import { RegisterSchema } from './register.model';
 
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: 'Register', schema: RegisterSchema }]),
+    
+
+      
+    
    
   ],
+ 
+
+
   controllers: [RegisterController],
   providers: [RegisterService],
+ 
 })
 export class RegisterModule {}
