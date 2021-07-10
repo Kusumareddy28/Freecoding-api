@@ -14,6 +14,7 @@ async function adminModule() {
    const adminFactory = new NestFactoryStatic();
    const admin = await adminFactory.create(adminModule, server);
    admin.setGlobalPrefix("/api/v1/admin");
+   console.log("test")
    await admin.init();
    const port = (process.env.PORT || '3000');
    console.log("App is running on port " + port)
