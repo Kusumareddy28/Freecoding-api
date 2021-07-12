@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 
 const express = require('express');
@@ -12,6 +12,16 @@ async function bootstrap() {
   app.setGlobalPrefix("/api/v1");
   await app.listen(port);  
   
+
+
+  const options = new DocumentBuilder()
+  .setTitle('API Documentation')
+  .setDescription('Swagger Documentation for the API')
+  .setVersion('1.0')
+  .build();
+
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api/v1',app,document);
   // const apiFactory = new NestFactoryStatic();
   // const api = await apiFactory.create(AppModule, server); 
   // const adminFactory = new NestFactoryStatic();

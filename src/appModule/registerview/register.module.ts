@@ -11,14 +11,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     MongooseModule.forFeature([{ name: 'Register', schema: RegisterSchema }]),
     
-
-      
-    
-   
   ],
  
-
-
   controllers: [RegisterController],
   providers: [RegisterService],
  

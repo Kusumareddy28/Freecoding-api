@@ -21,6 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@js-factory/router": "^0.2.0",
     "@nestjs/common": "^7.6.15",
     "@nestjs/config": "^1.0.0",
     "@nestjs/core": "^7.6.15",
@@ -35,6 +36,7 @@
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
+    "core-util-is": "^1.0.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-openid-connect": "^2.4.0",
